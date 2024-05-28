@@ -10,16 +10,25 @@ class TelaDestino extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Tela de Resultado')),
-        body: Center(
+      appBar: AppBar(
+         backgroundColor: Color.fromARGB(255, 0, 0, 0),),
+            backgroundColor: Color.fromARGB(255, 14, 65, 34),
+        body: Container(
+         decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage ('assets/imagens/letmesoloher.png'),
+              fit: BoxFit.cover
+            ),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text('Sabe muito pae, joga muito', style: TextStyle(fontSize: 24),
+              Text('Parabéns! Você é um verdadeiro campeão.', textAlign: TextAlign.center, style: TextStyle(fontSize: 24, color: Colors.white),
           ),
           SizedBox(height: 20),
-          Text('Pontuacao: $pontuacao de $totalPerguntas',
-           style: TextStyle(fontSize: 20)
+          Text('Pontuacao: $pontuacao de $totalPerguntas', textAlign: TextAlign.center,
+           style: TextStyle(fontSize: 20, color: Colors.white)
            ),
         SizedBox(height: 20),
         ElevatedButton(
@@ -27,7 +36,9 @@ class TelaDestino extends StatelessWidget {
             resetQuiz();
             Navigator.pop(context);
           },
-          child: Text('Recomecar'))
+          child: Text('Recomecar')
+          
+          )
             ],
         ),
     ),
